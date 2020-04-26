@@ -1,0 +1,7 @@
+.mypy_cache/
+.pytest_cache/
+.python-version
+
+*.egg-info
+*.pyc
+*.swp
