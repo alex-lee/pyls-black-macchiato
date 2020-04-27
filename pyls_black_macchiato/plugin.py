@@ -13,6 +13,22 @@ from pyls_black_macchiato.lsp import Range, TextEdit
 
 
 @hookimpl(tryfirst=True)
+def pyls_format_document(document: Document) -> List[TextEdit]:
+    try:
+        lines = _macchiato_format(document.lines)
+    except ValueError:
+        return []
+
+    range: Range = {
+        "start": {"line": 0, "character": 0,},
+        "end": {"line": len(document.lines), "character": 0,},
+    }
+
+    edit: TextEdit = {"range": range, "newText": "".join(lines)}
+    return [edit]
+
+
+@hookimpl(tryfirst=True)
 def pyls_format_range(document: Document, range: Range) -> List[TextEdit]:
     range["start"]["character"] = 0
     range["end"]["line"] += 1
