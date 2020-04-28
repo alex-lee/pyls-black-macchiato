@@ -20,8 +20,8 @@ def pyls_format_document(document: Document) -> List[TextEdit]:
         return []
 
     range: Range = {
-        "start": {"line": 0, "character": 0,},
-        "end": {"line": len(document.lines), "character": 0,},
+        "start": {"line": 0, "character": 0},
+        "end": {"line": len(document.lines), "character": 0},
     }
 
     edit: TextEdit = {"range": range, "newText": "".join(lines)}

@@ -8,7 +8,7 @@ setup(
     author="Alex Lee",
     author_email="alex@collat.io",
     packages=find_packages(exclude=["tests"]),
-    install_requires=["python-language-server", "black-macchiato"],
+    install_requires=["python-language-server", "black-macchiato", "typing-extensions"],
     extras_require={"dev": ["flake8", "mypy", "pytest"]},
     entry_points={"pyls": ["pyls_black_macchiato = pyls_black_macchiato.plugin"]},
 )
