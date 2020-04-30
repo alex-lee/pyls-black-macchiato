@@ -7,12 +7,12 @@ from typing import List, Tuple
 
 import attr
 import black
-import macchiato
 import toml
 
 from pyls import hookimpl
 from pyls.workspace import Document
 
+from pyls_black_macchiato import macchiato
 from pyls_black_macchiato.lsp import Range, TextEdit
 
 
