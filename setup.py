@@ -5,7 +5,7 @@ with open("README.md") as fh:
 
 setuptools.setup(
     name="pyls-black-macchiato",
-    version="0.1.0",
+    version="0.1.1",
     author="Alex Lee",
     author_email="alex@collat.io",
     description="Black-macchiato plugin for the Python Language Server",
