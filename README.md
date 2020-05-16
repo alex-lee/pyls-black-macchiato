@@ -7,15 +7,12 @@ Such functionality is provided by [black-macchiato], while `black` only formats 
 (see the `black-macchiato` readme for more background).
 
 This plugin works similarly to `pyls-black`, but it uses the wrapping functionality from
-`black-macchiato` to enable formatting of (mostly) arbitrary ranges. Currently it vendors
-`macchiato.py` from my [fork of black-macchiato][black-macchiato-fork], which has been refactored to
-better expose the bits that are needed here.
+`black-macchiato` to enable formatting of (mostly) arbitrary ranges.
 
 [black]: https://black.readthedocs.io/en/stable/
 [pyls]: https://github.com/palantir/python-language-server
 [pyls-black]: https://github.com/rupert/pyls-black
 [black-macchiato]: https://github.com/wbolster/black-macchiato
-[black-macchiato-fork]: https://github.com/alex-lee/black-macchiato
 
 ## Configuration
 

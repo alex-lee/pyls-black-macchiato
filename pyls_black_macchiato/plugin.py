@@ -9,10 +9,10 @@ import attr
 import black
 import toml
 
+import macchiato
 from pyls import hookimpl
 from pyls.workspace import Document
 
-from pyls_black_macchiato import macchiato
 from pyls_black_macchiato.lsp import Range, TextEdit
 
 
