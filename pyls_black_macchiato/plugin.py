@@ -2,10 +2,10 @@
 Python Language Server plugin to provide formatting via black-macchiato.
 """
 
+import dataclasses
 import logging
 from typing import List, Tuple
 
-import attr
 import black
 import toml
 
@@ -63,10 +63,10 @@ def macchiato_format(src_path: str, lines: List[str]) -> List[str]:
     return macchiato.unwrap_lines(lines, wrap_info)
 
 
-def load_config(src_path: str) -> Tuple[black.FileMode, bool]:
+def load_config(src_path: str) -> Tuple[black.Mode, bool]:
     """Load black configuration from ``pyproject.toml``."""
 
-    mode = black.FileMode()
+    mode = black.Mode()
     fast = False
 
     root = black.find_project_root((src_path,))
@@ -94,9 +94,9 @@ def load_config(src_path: str) -> Tuple[black.FileMode, bool]:
     if "slow" in config:
         fast = not config.pop("slow")
 
-    # Convert to a black.FileMode.
-    config_fields = [f.name for f in attr.fields(black.FileMode)]
+    # Convert to a black.Mode.
+    config_fields = [f.name for f in dataclasses.fields(black.Mode)]
     config = {k: v for k, v in config.items() if k in config_fields}
     logging.info("Loaded config: %s", config)  # TODO debug
 
-    return black.FileMode(**config), fast
+    return black.Mode(**config), fast
